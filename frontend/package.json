@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "postinstall": "node patch-rollup.cjs"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@rollup/rollup-win32-x64-msvc": "^4.63.5",

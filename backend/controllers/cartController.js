@@ -8,7 +8,7 @@ export const getCart = async (req, res) => {
       cart = await Cart.create({ user: req.user._id, items: [] });
     }
     
-    res.json({ cart });
+    res.json(cart);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

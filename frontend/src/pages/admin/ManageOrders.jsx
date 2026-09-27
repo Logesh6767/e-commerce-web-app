@@ -12,7 +12,7 @@ const ManageOrders = () => {
   const fetchOrders = async () => {
     try {
       const { data } = await api.get('/admin/orders');
-      setOrders(data || []);
+      setOrders(data.orders || []);
     } catch (error) {
       console.error("Failed to fetch orders", error);
     } finally {

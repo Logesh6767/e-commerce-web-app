@@ -18,7 +18,7 @@ const Products = () => {
   const [search, setSearch] = useState(searchParam);
   const [sort, setSort] = useState(sortParam);
 
-  const categories = ['Electronics', 'Clothing', 'Books', 'Home & Kitchen', 'Sports'];
+  const categories = ['Electronics', 'Clothing', 'Books', 'Home', 'Toys'];
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -30,7 +30,7 @@ const Products = () => {
         if (sort) url += `sort=${sort}`;
         
         const { data } = await api.get(url);
-        setProducts(data || []);
+        setProducts(data.products || []);
       } catch (error) {
         console.error("Error fetching products", error);
       } finally {

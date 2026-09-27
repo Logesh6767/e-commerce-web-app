@@ -15,7 +15,7 @@ const ManageProducts = () => {
   const fetchProducts = async () => {
     try {
       const { data } = await api.get('/products');
-      setProducts(data || []);
+      setProducts(data.products || []);
     } catch (error) {
       console.error("Failed to fetch products", error);
     } finally {

@@ -14,7 +14,7 @@ const OrderDetail = () => {
     const fetchOrder = async () => {
       try {
         const { data } = await api.get(`/orders/${id}`);
-        setOrder(data);
+        setOrder(data.order);
       } catch (error) {
         console.error("Failed to fetch order", error);
       } finally {
@@ -47,11 +47,11 @@ const OrderDetail = () => {
         <div className="order-items card">
           <h3>Order Items</h3>
           <div className="items-list">
-            {order.items.map((item, index) => (
+            {order.orderItems.map((item, index) => (
               <div key={index} className="order-item-row">
-                <img src={item.image || 'https://via.placeholder.com/50'} alt={item.name} />
+                <img src={item.product.image || 'https://via.placeholder.com/50'} alt={item.product.name} />
                 <div className="item-info">
-                  <Link to={`/products/${item.product}`} className="item-name">{item.name}</Link>
+                  <Link to={`/products/${item.product._id}`} className="item-name">{item.product.name}</Link>
                   <p className="item-qty">Qty: {item.quantity}</p>
                 </div>
                 <div className="item-price">

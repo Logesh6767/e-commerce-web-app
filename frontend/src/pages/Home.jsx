@@ -14,7 +14,7 @@ const Home = () => {
     const fetchProducts = async () => {
       try {
         const { data } = await api.get('/products');
-        setProducts(data.slice(0, 8));
+        setProducts(data.products.slice(0, 8));
       } catch (error) {
         console.error("Failed to fetch products", error);
       } finally {
@@ -48,7 +48,7 @@ const Home = () => {
       <section className="categories-section">
         <h2>Shop by Category</h2>
         <div className="category-cards">
-          {['Electronics', 'Clothing', 'Books', 'Home & Kitchen', 'Sports'].map(category => (
+          {['Electronics', 'Clothing', 'Books', 'Home'].map(category => (
             <Link to={`/products?category=${category}`} key={category} className="category-card">
               <h3>{category}</h3>
             </Link>

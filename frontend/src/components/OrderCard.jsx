@@ -15,7 +15,7 @@ const OrderCard = ({ order }) => {
       
       <div className="order-body">
         <p className="order-total">Total: <strong>${order.totalPrice?.toFixed(2)}</strong></p>
-        <p className="order-items-count">{order.items?.length} items</p>
+        <p className="order-items-count">{order.orderItems?.length} items</p>
       </div>
       
       <div className="order-footer">

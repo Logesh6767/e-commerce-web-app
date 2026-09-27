@@ -27,7 +27,7 @@ const Checkout = () => {
       const { data } = await api.post('/orders', { shippingAddress });
       toast.success('Order placed successfully!');
       clearCart();
-      navigate(`/orders/${data._id}`);
+      navigate(`/orders/${data.order._id}`);
     } catch (error) {
       toast.error(error.response?.data?.message || 'Failed to place order');
     }
