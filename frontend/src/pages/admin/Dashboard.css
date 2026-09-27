@@ -1,0 +1,120 @@
+.admin-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.admin-sidebar {
+  width: 250px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 6rem;
+}
+
+.admin-sidebar h3 {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-sidebar nav ul {
+  list-style: none;
+}
+
+.admin-sidebar nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: var(--radius);
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.admin-sidebar nav a:hover {
+  background-color: var(--bg-light);
+  color: var(--primary);
+}
+
+.admin-sidebar nav a.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+.admin-content {
+  flex: 1;
+}
+
+.admin-content h2 {
+  margin-bottom: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.stat-card h4 {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.recent-orders {
+  padding: 1.5rem;
+}
+
+.recent-orders h3 {
+  margin-bottom: 1.5rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th, .admin-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-table th {
+  background-color: var(--bg-light);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.admin-table tr:hover {
+  background-color: #f9fafb;
+}
+
+@media (max-width: 768px) {
+  .admin-container {
+    flex-direction: column;
+  }
+  .admin-sidebar {
+    width: 100%;
+    position: static;
+  }
+}
